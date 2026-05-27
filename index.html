@@ -121,7 +121,7 @@ nav{
 
 /* ─── CTA BUTTON ─────────────────────────────────────── */
 .cta{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
   width:100%;max-width:440px;
   background:var(--grd);
   color:#fff;font-weight:800;font-size:16px;
@@ -131,6 +131,12 @@ nav{
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;
   min-height:56px;
+  /* iOS: garante que <a> com display:flex expanda corretamente */
+  -webkit-appearance:none;
+  box-sizing:border-box;
+}
+@media(max-width:767px){
+  .cta{max-width:100%}
 }
 .cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(124,0,217,.38)}
 .cta:active{transform:scale(.97)}
@@ -217,7 +223,7 @@ nav{
 
 /* float badges */
 .fc-badge{
-  position:absolute;
+  position:absolute;z-index:10;
   background:#fff;border:1.5px solid var(--bdr);
   border-radius:12px;padding:10px 14px;
   box-shadow:var(--sh-md);white-space:nowrap;
