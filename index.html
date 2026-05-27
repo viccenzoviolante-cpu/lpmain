@@ -2,11 +2,14 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Gerador de CV Grátis — DNA Work</title>
-<meta name="description" content="Em 5 minutos você tem um currículo profissional, descobre seu perfil comportamental e já entra no radar das vagas certas. Grátis, sem cadastro.">
+<meta name="description" content="Em 5 minutos você tem um currículo profissional. A equipe DNA Work já começa a buscar as vagas certas pro seu perfil e região. Grátis.">
 <meta property="og:title" content="Crie seu CV grátis — DNA Work">
-<meta property="og:description" content="Sem experiência? Sem problema. Em 5 minutos, currículo profissional + perfil DISC + vagas compatíveis. Grátis.">
+<meta property="og:description" content="Sem experiência? Sem problema. CV em 5 minutos + a DNA Work busca vagas pro seu perfil na hora.">
 <meta property="og:type" content="website">
 
 <!-- ⚠️ Meta Pixel — substitua SEU_PIXEL_ID -->
@@ -22,65 +25,73 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
-<!-- ⚠️ URL do gerador — substitua abaixo -->
+<!-- ⚠️ URL do gerador — troque aqui -->
 <script>const GERADOR = 'LINK_DO_GERADOR_AQUI';</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 <style>
-/* ─── RESET ─────────────────────────────────────────── */
+/* ─── RESET ──────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:'Plus Jakarta Sans',sans-serif;
-  background:#07080f;color:#eef0f8;
+  background:#fff;color:#0f172a;
   overflow-x:hidden;line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 /* ─── TOKENS ─────────────────────────────────────────── */
 :root{
-  --p:#7c00d9;--p2:#a020f0;
-  --t:#06b6d4;--t2:#22d3ee;
-  --surf:#0d0f1c;--surf2:#131628;--surf3:#1a1e35;
-  --bdr:rgba(255,255,255,.07);
-  --muted:#6b7494;--dim:#9aa0bc;
-  --r:16px;--tr:.22s cubic-bezier(.4,0,.2,1);
+  --p:#7c00d9;
+  --p-s:rgba(124,0,217,.1);
+  --p-b:rgba(124,0,217,.2);
+  --t:#06b6d4;
+  --t-s:rgba(6,182,212,.1);
+  --t-b:rgba(6,182,212,.22);
+  --g:#16a34a;
+  --g-s:rgba(22,163,74,.1);
+  --surf:#f8faff;
+  --surf2:#f1f5f9;
+  --bdr:#e2e8f0;
+  --bdr-s:#cbd5e1;
+  --muted:#64748b;
+  --dim:#475569;
+  --r:16px;
+  --tr:.22s cubic-bezier(.4,0,.2,1);
+  --sh:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
+  --sh-md:0 4px 12px rgba(0,0,0,.08),0 12px 36px rgba(0,0,0,.1);
   --grd:linear-gradient(135deg,var(--p),var(--t));
 }
 
-/* ─── NOISE TEXTURE ──────────────────────────────────── */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity:.028;
-}
-
 /* ─── LAYOUT ─────────────────────────────────────────── */
-.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
 
 /* ─── UTILS ──────────────────────────────────────────── */
 .gtxt{background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
-.badge-p{background:rgba(124,0,217,.14);border:1px solid rgba(124,0,217,.3);color:#b96aff}
-.badge-t{background:rgba(6,182,212,.11);border:1px solid rgba(6,182,212,.25);color:var(--t2)}
-.badge-g{background:rgba(34,197,94,.11);border:1px solid rgba(34,197,94,.25);color:#4ade80}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.badge-p{background:var(--p-s);border:1px solid var(--p-b);color:var(--p)}
+.badge-t{background:var(--t-s);border:1px solid var(--t-b);color:var(--t)}
+.badge-g{background:var(--g-s);border:1px solid rgba(22,163,74,.25);color:var(--g)}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
 .rv.in{opacity:1;transform:none}
-.rv[data-d="1"]{transition-delay:.1s}
-.rv[data-d="2"]{transition-delay:.2s}
-.rv[data-d="3"]{transition-delay:.3s}
+.rv[data-d="1"]{transition-delay:.08s}
+.rv[data-d="2"]{transition-delay:.18s}
+.rv[data-d="3"]{transition-delay:.28s}
 
 /* ─── FIXED MOBILE CTA ───────────────────────────────── */
 #mob-cta{
-  display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
-  padding:10px 20px 20px;
-  background:linear-gradient(to top,#07080f 55%,transparent);
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  padding:10px 20px;
+  padding-bottom:calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(to top,#fff 65%,rgba(255,255,255,0));
 }
 @media(max-width:767px){#mob-cta{display:block}}
 
@@ -88,320 +99,379 @@ body::before{
 nav{
   position:sticky;top:0;z-index:100;
   padding:14px 0;
-  background:rgba(7,8,15,.82);
+  padding-top:calc(14px + env(safe-area-inset-top,0px));
+  background:rgba(255,255,255,.9);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid var(--bdr);
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Syne',sans-serif;font-weight:900;font-size:19px;letter-spacing:-.4px}
-.logo em{color:var(--t);font-style:normal}
+.logo{font-family:'Syne',sans-serif;font-weight:900;font-size:19px;letter-spacing:-.4px;color:#0f172a}
+.logo em{font-style:normal;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .nav-cta-btn{
   display:none;
-  background:var(--grd);
-  color:#fff;font-weight:700;font-size:13px;
-  padding:8px 22px;border-radius:99px;
+  background:var(--grd);color:#fff;
+  font-weight:700;font-size:13px;
+  padding:9px 22px;border-radius:99px;
+  min-height:44px;
   transition:opacity var(--tr),transform var(--tr);
+  align-items:center;gap:6px;
 }
 .nav-cta-btn:hover{opacity:.85;transform:translateY(-1px)}
-@media(min-width:768px){.nav-cta-btn{display:inline-flex;align-items:center;gap:6px}}
+@media(min-width:768px){.nav-cta-btn{display:inline-flex}}
 
-/* ─── HERO ────────────────────────────────────────────── */
-.hero{
-  min-height:calc(100svh - 57px);
-  display:flex;align-items:center;
-  padding:64px 0 120px;position:relative;overflow:hidden;
-}
-/* blobs */
-.blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
-.blob-1{width:520px;height:520px;top:-140px;right:-120px;background:radial-gradient(circle,rgba(124,0,217,.28),transparent 70%)}
-.blob-2{width:380px;height:380px;bottom:-80px;left:-80px;background:radial-gradient(circle,rgba(6,182,212,.18),transparent 70%)}
-.blob-3{width:260px;height:260px;top:50%;left:40%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(160,32,240,.1),transparent 70%)}
-
-.hero-grid{
-  display:grid;grid-template-columns:1fr;
-  gap:56px;align-items:center;
-  position:relative;z-index:2;
-}
-@media(min-width:768px){.hero-grid{grid-template-columns:1fr 480px;gap:48px}}
-
-/* live badge */
-.live{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.22);
-  color:#4ade80;font-size:12px;font-weight:700;
-  padding:5px 13px;border-radius:99px;margin-bottom:22px;
-}
-.live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 1.8s ease infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-
-.hero-h{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(42px,6.5vw,76px);
-  font-weight:900;line-height:1.0;
-  letter-spacing:-2px;
-  margin-bottom:22px;
-}
-.hero-sub{font-size:17px;color:var(--dim);line-height:1.7;margin-bottom:38px;max-width:500px}
-.hero-sub b{color:#eef0f8;font-weight:600}
-
-/* cta */
+/* ─── CTA BUTTON ─────────────────────────────────────── */
 .cta{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   width:100%;max-width:440px;
   background:var(--grd);
   color:#fff;font-weight:800;font-size:16px;
-  padding:17px 30px;border-radius:14px;
-  box-shadow:0 10px 40px rgba(124,0,217,.38);
+  padding:18px 28px;border-radius:14px;
+  box-shadow:0 8px 32px rgba(124,0,217,.28),0 2px 8px rgba(124,0,217,.2);
   transition:transform var(--tr),box-shadow var(--tr);
-  position:relative;overflow:hidden;cursor:pointer;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  min-height:56px;
 }
-.cta::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.13),transparent);pointer-events:none}
-.cta:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(124,0,217,.5)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(124,0,217,.38)}
 .cta:active{transform:scale(.97)}
 .cta svg{flex-shrink:0;transition:transform var(--tr)}
 .cta:hover svg{transform:translateX(4px)}
 
-.micro{font-size:12px;color:var(--muted);margin-top:12px}
+/* ─── HERO ────────────────────────────────────────────── */
+.hero{
+  min-height:calc(100svh - 57px);
+  display:flex;align-items:center;
+  padding:56px 0 110px;
+  position:relative;overflow:hidden;
+  background:#fff;
+}
+/* soft bg blobs */
+.blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(90px);opacity:.5}
+.blob-1{width:480px;height:480px;top:-120px;right:-80px;background:radial-gradient(circle,rgba(124,0,217,.18),transparent 70%)}
+.blob-2{width:360px;height:360px;bottom:-60px;left:-60px;background:radial-gradient(circle,rgba(6,182,212,.16),transparent 70%)}
 
-.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:768px){.hero-grid{grid-template-columns:1fr 460px;gap:56px}}
+
+/* live badge */
+.live{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2);
+  color:#15803d;font-size:12px;font-weight:700;
+  padding:5px 13px;border-radius:99px;margin-bottom:20px;
+}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#16a34a;animation:pulse 1.8s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+.hero-h{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(40px,6vw,72px);
+  font-weight:900;line-height:1.0;
+  letter-spacing:-2px;color:#0f172a;
+  margin-bottom:20px;
+}
+.hero-sub{font-size:17px;color:var(--dim);line-height:1.7;margin-bottom:36px;max-width:500px}
+.hero-sub b{color:#0f172a;font-weight:700}
+
+.micro{font-size:12px;color:var(--muted);margin-top:12px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
 .pill{
-  background:var(--surf2);border:1px solid var(--bdr);
+  background:#fff;border:1.5px solid var(--bdr);
   border-radius:99px;padding:7px 14px;
   font-size:13px;font-weight:600;color:var(--dim);
   display:flex;align-items:center;gap:5px;
+  box-shadow:var(--sh);
 }
 
 /* ─── CV MOCKUP ──────────────────────────────────────── */
-.mockup-wrap{position:relative;display:flex;justify-content:center}
+.mockup-wrap{position:relative;display:flex;justify-content:center;padding:20px 40px}
 .cv{
-  width:min(300px,88vw);
+  width:min(280px,85vw);
   background:#fff;border-radius:20px;
   overflow:hidden;
-  box-shadow:0 50px 100px rgba(0,0,0,.7),0 0 0 1px rgba(124,0,217,.18);
+  box-shadow:0 32px 64px rgba(0,0,0,.16),0 8px 24px rgba(0,0,0,.1),0 0 0 1px rgba(124,0,217,.12);
   animation:levitate 5s ease-in-out infinite;
 }
-@keyframes levitate{0%,100%{transform:translateY(0) rotate(.5deg)}50%{transform:translateY(-14px) rotate(-.5deg)}}
+@keyframes levitate{0%,100%{transform:translateY(0) rotate(.3deg)}50%{transform:translateY(-12px) rotate(-.3deg)}}
 
 .cv-hdr{
-  background:linear-gradient(140deg,#5a00a0,var(--p),#3b0098);
-  padding:22px 20px;display:flex;align-items:center;gap:13px;
+  background:linear-gradient(140deg,#5a00a0,var(--p),#0891b2);
+  padding:22px 18px;display:flex;align-items:center;gap:12px;
 }
 .cv-av{
-  width:48px;height:48px;border-radius:50%;
-  background:rgba(255,255,255,.22);
-  border:2px solid rgba(255,255,255,.45);
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;flex-shrink:0;
+  width:46px;height:46px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
 }
-.cv-nm{font-size:14px;font-weight:800;color:#fff;line-height:1.25}
-.cv-rl{font-size:11px;color:rgba(255,255,255,.65);margin-top:3px}
+.cv-nm{font-size:14px;font-weight:800;color:#fff;line-height:1.2}
+.cv-rl{font-size:11px;color:rgba(255,255,255,.7);margin-top:3px}
 
 .cv-bd{padding:18px 16px}
-.cv-sc{margin-bottom:16px}
-.cv-sl{font-size:9px;font-weight:800;color:var(--p);text-transform:uppercase;letter-spacing:.9px;margin-bottom:7px}
+.cv-sc{margin-bottom:15px}
+.cv-sl{font-size:9px;font-weight:800;color:var(--p);text-transform:uppercase;letter-spacing:.8px;margin-bottom:7px}
 .ln{height:7px;background:#e8ecf5;border-radius:99px;margin-bottom:5px}
-.ln.w80{width:80%}.ln.w60{width:60%}.ln.w45{width:45%}.ln.w90{width:90%}
-.ln.acc{background:linear-gradient(90deg,var(--p),var(--t));width:78%}
+.ln.w90{width:90%}.ln.w80{width:80%}.ln.w60{width:60%}.ln.w45{width:45%}
+.ln.acc{background:linear-gradient(90deg,var(--p),var(--t));width:80%}
 .tags{display:flex;gap:4px;flex-wrap:wrap}
 .tag{background:#f0e6ff;color:#6a00c0;font-size:8px;font-weight:800;padding:3px 8px;border-radius:99px}
 
-/* float cards */
-.fc{
+/* float badges */
+.fc-badge{
   position:absolute;
-  background:#0d0f1c;border:1px solid rgba(124,0,217,.35);
-  border-radius:12px;padding:10px 15px;
-  box-shadow:0 12px 32px rgba(0,0,0,.6);white-space:nowrap;
-  animation:fc-float 4s ease-in-out infinite;
+  background:#fff;border:1.5px solid var(--bdr);
+  border-radius:12px;padding:10px 14px;
+  box-shadow:var(--sh-md);white-space:nowrap;
 }
-.fc:nth-child(2){animation-duration:3.5s;animation-delay:.6s}
-.fc-top{top:-24px;right:-28px}
-.fc-bot{bottom:24px;left:-36px}
-@keyframes fc-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.fc-lbl{font-size:10px;color:var(--muted);font-weight:500;margin-bottom:2px}
+.fc-badge:nth-child(1){top:-12px;right:-8px;animation:fb 4s ease-in-out infinite}
+.fc-badge:nth-child(3){bottom:16px;left:-10px;animation:fb 3.6s ease-in-out infinite .5s}
+@keyframes fb{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.fc-lbl{font-size:10px;color:var(--muted);font-weight:500;margin-bottom:3px}
 .fc-val{font-size:15px;font-weight:900}
-.fc-val.t{color:var(--t2)}.fc-val.g{color:#4ade80}
+.fc-val.t{color:var(--t)}.fc-val.g{color:var(--g)}
 
 /* ─── STATS ──────────────────────────────────────────── */
 .stats{
+  background:var(--surf);
   border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);
-  background:var(--surf);padding:36px 0;
+  padding:36px 0;
 }
-.stats-g{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:28px;text-align:center;
-}
+.stats-g{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;text-align:center}
 @media(min-width:600px){.stats-g{grid-template-columns:repeat(4,1fr)}}
-.snum{
-  font-family:'Syne',sans-serif;
-  font-size:36px;font-weight:900;letter-spacing:-1px;line-height:1;
+.snum{font-family:'Syne',sans-serif;font-size:34px;font-weight:900;letter-spacing:-1px;line-height:1}
+.snum.p{color:var(--p)}.snum.t{color:var(--t)}.snum.g{color:var(--g)}.snum.o{color:#d97706}
+.slbl{font-size:13px;color:var(--muted);font-weight:500;margin-top:5px}
+
+/* ─── MATCHING CALLOUT ───────────────────────────────── */
+.matching{
+  background:linear-gradient(135deg,var(--p) 0%,#5500a0 40%,var(--t) 100%);
+  padding:56px 0;position:relative;overflow:hidden;
 }
-.snum.p{color:var(--p2)}.snum.t{color:var(--t2)}.snum.g{color:#4ade80}.snum.o{color:#f59e0b}
-.slbl{font-size:13px;color:var(--muted);font-weight:500;margin-top:6px}
+.matching::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.matching-in{
+  display:grid;grid-template-columns:1fr;gap:40px;
+  align-items:center;position:relative;z-index:1;
+}
+@media(min-width:768px){.matching-in{grid-template-columns:1fr 1fr;gap:60px}}
+
+.matching-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+  color:#fff;font-size:12px;font-weight:700;
+  padding:5px 14px;border-radius:99px;margin-bottom:18px;letter-spacing:.4px;text-transform:uppercase;
+}
+.matching-h{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(26px,4vw,44px);
+  font-weight:900;letter-spacing:-1px;
+  color:#fff;line-height:1.1;margin-bottom:14px;
+}
+.matching-sub{font-size:15px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:28px}
+.matching-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;
+  background:#fff;color:var(--p);
+  font-weight:800;font-size:15px;
+  padding:16px 28px;border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  transition:transform var(--tr),box-shadow var(--tr);
+  min-height:54px;-webkit-tap-highlight-color:transparent;
+}
+.matching-cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.25)}
+.matching-cta:active{transform:scale(.97)}
+
+.steps-match{display:flex;flex-direction:column;gap:16px}
+.step-m{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+  border-radius:14px;padding:18px 20px;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.step-m-num{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:900;font-size:16px;color:#fff;
+}
+.step-m-ttl{font-size:14px;font-weight:800;color:#fff;margin-bottom:3px}
+.step-m-dsc{font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
 
 /* ─── SECTIONS ───────────────────────────────────────── */
-.sec{padding:88px 0}
-.sec-hd{margin-bottom:48px}
+.sec{padding:80px 0}
+.sec-alt{background:var(--surf)}
+.sec-hd{margin-bottom:44px}
+.centered{text-align:center}.centered .sec-sub{margin:0 auto}
 .sec-title{
   font-family:'Syne',sans-serif;
-  font-size:clamp(28px,4vw,46px);
+  font-size:clamp(26px,4vw,44px);
   font-weight:900;letter-spacing:-1.2px;line-height:1.1;
-  margin-top:14px;margin-bottom:12px;
+  color:#0f172a;margin-top:12px;margin-bottom:10px;
 }
 .sec-sub{font-size:15px;color:var(--dim);max-width:520px;line-height:1.65}
-.centered{text-align:center}.centered .sec-sub{margin:0 auto}
 
 /* ─── PERFIS ─────────────────────────────────────────── */
 .pg{display:grid;grid-template-columns:1fr;gap:14px}
 @media(min-width:640px){.pg{grid-template-columns:repeat(3,1fr)}}
 .pc{
-  background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r);
-  padding:26px;
-  transition:border-color var(--tr),transform var(--tr);
-  cursor:default;
+  background:#fff;border:1.5px solid var(--bdr);border-radius:var(--r);
+  padding:26px;box-shadow:var(--sh);
+  transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr);
+  -webkit-tap-highlight-color:transparent;
 }
-.pc:hover{border-color:rgba(124,0,217,.4);transform:translateY(-5px)}
-.pc-ico{
-  width:46px;height:46px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;margin-bottom:16px;
-}
-.pc-ttl{font-size:16px;font-weight:800;margin-bottom:8px;line-height:1.35}
+.pc:hover{border-color:var(--p-b);transform:translateY(-4px);box-shadow:var(--sh-md)}
+.pc-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.pc-ttl{font-size:16px;font-weight:800;margin-bottom:8px;line-height:1.35;color:#0f172a}
 .pc-dsc{font-size:13px;color:var(--dim);line-height:1.6}
-.pc-tag{display:inline-block;margin-top:16px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px}
+.pc-tag{display:inline-block;margin-top:16px;font-size:11px;font-weight:700;padding:3px 11px;border-radius:99px}
 
 /* ─── COMO FUNCIONA ──────────────────────────────────── */
-.how-bg{background:var(--surf);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
-.steps{display:grid;grid-template-columns:1fr;gap:0}
-@media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps-g{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:768px){.steps-g{grid-template-columns:repeat(3,1fr)}}
 .step{
-  padding:40px 32px;border-bottom:1px solid var(--bdr);
-  position:relative;
+  background:#fff;padding:36px 28px;
+  border-bottom:1px solid var(--bdr);
 }
 @media(min-width:768px){
   .step{border-bottom:none;border-right:1px solid var(--bdr)}
   .step:last-child{border-right:none}
 }
 .step-n{
-  font-family:'Syne',sans-serif;font-size:56px;font-weight:900;
+  font-family:'Syne',sans-serif;font-size:52px;font-weight:900;
   line-height:1;margin-bottom:14px;
   background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.step-ttl{font-size:19px;font-weight:800;margin-bottom:9px}
+.step-ttl{font-size:18px;font-weight:800;margin-bottom:8px;color:#0f172a}
 .step-dsc{font-size:14px;color:var(--dim);line-height:1.65}
 .step-chip{
   display:inline-block;margin-top:16px;
   font-size:11px;font-weight:700;
-  background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.22);
-  color:var(--t2);padding:3px 11px;border-radius:99px;
+  background:var(--t-s);border:1px solid var(--t-b);
+  color:var(--t);padding:3px 11px;border-radius:99px;
 }
 
 /* ─── FEATURES ───────────────────────────────────────── */
 .fg{display:grid;grid-template-columns:1fr;gap:14px}
 @media(min-width:600px){.fg{grid-template-columns:1fr 1fr}}
 .fc-card{
-  background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r);
-  padding:26px;display:flex;align-items:flex-start;gap:16px;
-  transition:border-color var(--tr),transform var(--tr);
+  background:#fff;border:1.5px solid var(--bdr);border-radius:var(--r);
+  padding:24px;display:flex;align-items:flex-start;gap:16px;
+  box-shadow:var(--sh);
+  transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr);
 }
-.fc-card:hover{border-color:rgba(6,182,212,.3);transform:translateY(-3px)}
-.fc-ico{
-  width:46px;height:46px;border-radius:12px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-}
-.fc-ttl{font-size:15px;font-weight:800;margin-bottom:5px}
+.fc-card:hover{border-color:var(--t-b);transform:translateY(-3px);box-shadow:var(--sh-md)}
+.fc-ico{width:46px;height:46px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.fc-ttl{font-size:15px;font-weight:800;margin-bottom:5px;color:#0f172a}
 .fc-dsc{font-size:13px;color:var(--dim);line-height:1.6}
 
 /* ─── TESTIMONIALS ───────────────────────────────────── */
 .tg{display:grid;grid-template-columns:1fr;gap:14px}
 @media(min-width:640px){.tg{grid-template-columns:repeat(3,1fr)}}
 .tc{
-  background:var(--surf2);border:1px solid var(--bdr);
-  border-radius:var(--r);padding:26px;
+  background:#fff;border:1.5px solid var(--bdr);border-radius:var(--r);
+  padding:26px;box-shadow:var(--sh);
   display:flex;flex-direction:column;
 }
-.tc-stars{color:#f59e0b;font-size:13px;letter-spacing:1px;margin-bottom:14px}
+.tc-stars{color:#d97706;font-size:13px;letter-spacing:1px;margin-bottom:14px}
 .tc-q{
-  font-size:14px;color:#c8cedf;line-height:1.7;
+  font-size:14px;color:var(--dim);line-height:1.7;
   font-style:italic;flex:1;margin-bottom:20px;
+  position:relative;padding-left:20px;
 }
-.tc-q::before{content:'\201C';font-size:38px;color:var(--p2);line-height:0;vertical-align:-13px;margin-right:4px;font-style:normal}
+.tc-q::before{
+  content:'"';font-size:42px;color:var(--p);
+  position:absolute;left:-4px;top:-8px;font-style:normal;
+  font-family:'Syne',sans-serif;line-height:1;
+}
 .tc-auth{display:flex;align-items:center;gap:11px}
 .tc-av{
   width:38px;height:38px;border-radius:50%;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
   font-size:15px;font-weight:800;color:#fff;
 }
-.tc-nm{font-size:13px;font-weight:700}
+.tc-nm{font-size:13px;font-weight:700;color:#0f172a}
 .tc-loc{font-size:12px;color:var(--muted)}
 
 /* ─── FAQ ────────────────────────────────────────────── */
-.faq{max-width:700px;margin:0 auto}
-.fi{border-bottom:1px solid var(--bdr);padding:20px 0;cursor:pointer}
+.faq-wrap{max-width:700px;margin:0 auto}
+.fi{border-bottom:1px solid var(--bdr);padding:20px 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .fi:first-child{border-top:1px solid var(--bdr)}
-.fq{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:700;gap:16px;user-select:none}
+.fq{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:700;gap:16px;user-select:none;color:#0f172a}
 .fi-ico{
-  width:26px;height:26px;border-radius:50%;flex-shrink:0;
-  background:var(--surf3);border:1px solid var(--bdr);
+  width:28px;height:28px;min-width:28px;border-radius:50%;
+  background:var(--surf2);border:1.5px solid var(--bdr);
   display:flex;align-items:center;justify-content:center;
-  font-size:16px;transition:transform var(--tr),background var(--tr);
+  font-size:18px;line-height:1;transition:transform var(--tr),background var(--tr),border-color var(--tr);
+  color:var(--dim);
 }
-.fi.open .fi-ico{transform:rotate(45deg);background:rgba(124,0,217,.2);border-color:rgba(124,0,217,.4)}
+.fi.open .fi-ico{transform:rotate(45deg);background:var(--p-s);border-color:var(--p-b);color:var(--p)}
 .fa{
   font-size:14px;color:var(--dim);line-height:1.7;
   max-height:0;overflow:hidden;padding:0;
-  transition:max-height .38s ease,padding .38s ease;
+  transition:max-height .36s ease,padding .36s ease;
 }
-.fi.open .fa{max-height:220px;padding:13px 0 0}
+.fi.open .fa{max-height:240px;padding:13px 0 0}
 
 /* ─── FINAL CTA ──────────────────────────────────────── */
 .cta-sec{
-  padding:100px 0;text-align:center;
+  padding:96px 0;text-align:center;
+  background:var(--surf);
+  border-top:1px solid var(--bdr);
   position:relative;overflow:hidden;
 }
 .cta-sec::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(124,0,217,.17),transparent);
-  pointer-events:none;
-}
-.cta-sec::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 40% 40% at 50% 80%,rgba(6,182,212,.1),transparent);
+  content:'';position:absolute;
+  top:-100px;left:50%;transform:translateX(-50%);
+  width:600px;height:400px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(124,0,217,.08) 0%,transparent 70%);
   pointer-events:none;
 }
 .cta-h{
   font-family:'Syne',sans-serif;
-  font-size:clamp(30px,5vw,58px);
+  font-size:clamp(28px,5vw,54px);
   font-weight:900;letter-spacing:-1.5px;
-  line-height:1.1;margin-bottom:18px;
+  line-height:1.1;color:#0f172a;margin-bottom:16px;
 }
-.cta-sub{font-size:16px;color:var(--dim);margin-bottom:42px}
+.cta-sub{font-size:16px;color:var(--dim);margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
 .cta-center{display:flex;justify-content:center}
-.trust{display:flex;gap:22px;justify-content:center;margin-top:28px;flex-wrap:wrap}
-.trust-i{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--dim);font-weight:500}
+.trust{display:flex;gap:20px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.trust-i{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--dim);font-weight:500}
 .trust-ck{
-  width:20px;height:20px;border-radius:50%;flex-shrink:0;
-  background:rgba(74,222,128,.14);
+  width:20px;height:20px;min-width:20px;border-radius:50%;
+  background:var(--g-s);border:1px solid rgba(22,163,74,.25);
   display:flex;align-items:center;justify-content:center;
 }
-.trust-ck svg{width:10px;height:10px;stroke:#4ade80;stroke-width:3;fill:none}
+.trust-ck svg{width:10px;height:10px;stroke:var(--g);stroke-width:2.5;fill:none}
 
 /* ─── FOOTER ─────────────────────────────────────────── */
 footer{
-  border-top:1px solid var(--bdr);padding:28px 0;text-align:center;
+  border-top:1px solid var(--bdr);
+  padding:28px 0;
+  padding-bottom:calc(28px + env(safe-area-inset-bottom,0px));
+  text-align:center;background:#fff;
 }
-.foot-logo{font-family:'Syne',sans-serif;font-weight:900;font-size:16px;margin-bottom:8px}
-.foot-logo em{color:var(--t);font-style:normal}
+.foot-logo{font-family:'Syne',sans-serif;font-weight:900;font-size:16px;color:#0f172a;margin-bottom:6px}
+.foot-logo em{font-style:normal;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .foot-fine{font-size:12px;color:var(--muted)}
 
-/* ─── SCROLL HELPER ──────────────────────────────────── */
-@media(max-width:767px){.hero{padding-bottom:90px}}
+/* ─── MOBILE SPACING ─────────────────────────────────── */
+@media(max-width:767px){
+  .hero{padding-bottom:100px}
+  .sec{padding:60px 0}
+  .matching{padding:48px 0}
+  .cta-sec{padding:72px 0}
+}
+
+/* ─── REDUCED MOTION ─────────────────────────────────── */
 @media(prefers-reduced-motion:reduce){
-  .rv,.cv,.fc{animation:none!important;opacity:1!important;transform:none!important}
+  .rv,.cv,.fc-badge{animation:none!important;opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══════════════════════════════════════════════ -->
+<!-- NAV -->
 <nav>
   <div class="wrap">
     <div class="nav-in">
@@ -414,7 +484,7 @@ footer{
   </div>
 </nav>
 
-<!-- ══ FIXED MOBILE CTA ══════════════════════════════════ -->
+<!-- FIXED MOBILE CTA -->
 <div id="mob-cta">
   <a href="#" class="cta cta-link" style="max-width:100%" onclick="track('Lead','fixed')">
     Criar meu currículo grátis
@@ -422,15 +492,13 @@ footer{
   </a>
 </div>
 
-<!-- ══ HERO ═══════════════════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
   <div class="wrap">
     <div class="hero-grid">
 
-      <!-- COPY -->
       <div>
         <div class="live">
           <span class="live-dot"></span>
@@ -441,7 +509,7 @@ footer{
           <span class="gtxt">Sem problema.</span>
         </h1>
         <p class="hero-sub">
-          Em <b>5 minutos</b> você cria um currículo que o RH nota, descobre como você trabalha e já entra no radar das vagas certas. <b>De graça, sem cadastro.</b>
+          Em <b>5 minutos</b> você cria um currículo profissional, descobre seu perfil e a equipe DNA Work já começa a buscar as vagas ideais pra você. <b>De graça.</b>
         </p>
         <a href="#" class="cta cta-link" onclick="track('Lead','hero')">
           Criar meu currículo grátis
@@ -455,9 +523,8 @@ footer{
         </div>
       </div>
 
-      <!-- MOCKUP -->
       <div class="mockup-wrap">
-        <div class="fc fc-top">
+        <div class="fc-badge" style="top:-12px;right:-8px">
           <div class="fc-lbl">Perfil DISC</div>
           <div class="fc-val t">Realizador ↗</div>
         </div>
@@ -487,22 +554,16 @@ footer{
               <div class="ln w60"></div>
             </div>
             <div class="cv-sc">
-              <div class="cv-sl">Experiências</div>
-              <div class="ln w80"></div>
-              <div class="ln w45"></div>
-            </div>
-            <div class="cv-sc">
               <div class="cv-sl">Competências</div>
               <div class="tags">
                 <div class="tag">Comunicação</div>
                 <div class="tag">Equipe</div>
                 <div class="tag">Proativo</div>
-                <div class="tag">Pontual</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="fc fc-bot">
+        <div class="fc-badge" style="bottom:16px;left:-10px">
           <div class="fc-lbl">Vagas compatíveis</div>
           <div class="fc-val g">12 encontradas ↗</div>
         </div>
@@ -512,7 +573,7 @@ footer{
   </div>
 </section>
 
-<!-- ══ STATS ═══════════════════════════════════════════════ -->
+<!-- STATS -->
 <div class="stats">
   <div class="wrap">
     <div class="stats-g rv">
@@ -521,7 +582,7 @@ footer{
         <div class="slbl">Currículos gerados</div>
       </div>
       <div>
-        <div class="snum t" data-target="49" data-suffix="" data-decimal>0</div>
+        <div class="snum t" data-target="49" data-decimal>0</div>
         <div class="slbl">Avaliação média ⭐</div>
       </div>
       <div>
@@ -536,7 +597,58 @@ footer{
   </div>
 </div>
 
-<!-- ══ PARA QUEM É ══════════════════════════════════════════ -->
+<!-- MATCHING — DNA Work busca vagas -->
+<section class="matching">
+  <div class="wrap">
+    <div class="matching-in">
+
+      <div class="rv">
+        <div class="matching-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          DNA Work busca por você
+        </div>
+        <h2 class="matching-h">
+          Você gera o CV.<br>
+          A gente busca a vaga.
+        </h2>
+        <p class="matching-sub">
+          Assim que você criar seu currículo, nossa equipe começa <strong style="color:#fff">na hora</strong> a procurar as vagas ideais pro seu perfil e pra sua região. Sem precisar mandar mensagem, sem precisar ficar ligando. A DNA Work trabalha pra você.
+        </p>
+        <a href="#" class="matching-cta cta-link" onclick="track('Lead','matching')">
+          Quero que busquem por mim
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="steps-match rv" data-d="2">
+        <div class="step-m">
+          <div class="step-m-num">1</div>
+          <div>
+            <div class="step-m-ttl">Você cria seu currículo</div>
+            <div class="step-m-dsc">Em 5 minutos, preenchendo perguntas simples. Sem precisar saber escrever "certo".</div>
+          </div>
+        </div>
+        <div class="step-m">
+          <div class="step-m-num">2</div>
+          <div>
+            <div class="step-m-ttl">A DNA Work analisa seu perfil</div>
+            <div class="step-m-dsc">Nossa equipe lê seu histórico, suas competências e descobre o que você faz de melhor.</div>
+          </div>
+        </div>
+        <div class="step-m">
+          <div class="step-m-num">3</div>
+          <div>
+            <div class="step-m-ttl">As vagas chegam até você</div>
+            <div class="step-m-dsc">Só as vagas certas pro seu perfil e perto de onde você mora. Sem precisar garimpar.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
 <section class="sec">
   <div class="wrap">
     <div class="sec-hd rv">
@@ -546,58 +658,58 @@ footer{
     </div>
     <div class="pg">
       <div class="pc rv" data-d="1">
-        <div class="pc-ico" style="background:rgba(124,0,217,.12)">🆕</div>
+        <div class="pc-ico" style="background:var(--p-s)">🆕</div>
         <div class="pc-ttl">Nunca trabalhei com carteira assinada</div>
-        <div class="pc-dsc">Bico, serviço da família, voluntário — tudo isso conta. A gente te ajuda a apresentar seu histórico do jeito certo.</div>
+        <div class="pc-dsc">Bico, serviço da família, voluntário — tudo isso conta. A gente te ajuda a apresentar do jeito certo.</div>
         <span class="pc-tag badge badge-p">Primeiro emprego</span>
       </div>
       <div class="pc rv" data-d="2">
-        <div class="pc-ico" style="background:rgba(6,182,212,.12)">📋</div>
+        <div class="pc-ico" style="background:var(--t-s)">📋</div>
         <div class="pc-ttl">Tenho experiência mas nunca fiz um currículo</div>
-        <div class="pc-dsc">Se você já trabalhou em alguma coisa, você tem mais pra mostrar do que imagina. A gente organiza isso por você.</div>
+        <div class="pc-dsc">Se você já trabalhou em alguma coisa, você tem mais pra mostrar do que imagina. A gente organiza por você.</div>
         <span class="pc-tag badge badge-t">Formalizando</span>
       </div>
       <div class="pc rv" data-d="3">
-        <div class="pc-ico" style="background:rgba(34,197,94,.12)">📈</div>
+        <div class="pc-ico" style="background:var(--g-s)">📈</div>
         <div class="pc-ttl">Quero me reposicionar no mercado</div>
-        <div class="pc-dsc">Um CV atualizado e profissional abre portas que currículo no papel não abre. Hora de dar o próximo passo.</div>
+        <div class="pc-dsc">Um CV atualizado abre portas que currículo no papel não abre. Hora de dar o próximo passo.</div>
         <span class="pc-tag badge badge-g">Crescimento</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ COMO FUNCIONA ═══════════════════════════════════════ -->
-<div class="how-bg sec">
-  <div class="wrap">
-    <div class="sec-hd centered rv">
+<!-- COMO FUNCIONA -->
+<section class="sec sec-alt" style="padding:0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)">
+  <div class="wrap" style="padding:0">
+    <div style="padding:48px 20px 24px;text-align:center" class="rv">
       <span class="badge badge-t">Como funciona</span>
-      <h2 class="sec-title">Três passos.<br><span class="gtxt">Cinco minutos.</span></h2>
+      <h2 class="sec-title" style="margin-top:12px">Três passos.<br><span class="gtxt">Cinco minutos.</span></h2>
     </div>
-    <div class="steps">
-      <div class="step rv" data-d="1">
+    <div class="steps-g">
+      <div class="step rv" data-d="1" style="background:var(--surf)">
         <div class="step-n">01</div>
         <div class="step-ttl">Escolhe o visual</div>
         <div class="step-dsc">10 layouts e 10 cores. Você vê o resultado em tempo real antes de preencher qualquer dado.</div>
         <span class="step-chip">⏱ 30 segundos</span>
       </div>
-      <div class="step rv" data-d="2">
+      <div class="step rv" data-d="2" style="background:var(--surf)">
         <div class="step-n">02</div>
         <div class="step-ttl">Conta sua história</div>
         <div class="step-dsc">Perguntas simples, sem enrolação. Não precisa saber escrever "certo" — o sistema monta tudo por você.</div>
         <span class="step-chip">⏱ 3 a 4 minutos</span>
       </div>
-      <div class="step rv" data-d="3">
+      <div class="step rv" data-d="3" style="background:var(--surf)">
         <div class="step-n">03</div>
-        <div class="step-ttl">Baixa e manda</div>
-        <div class="step-dsc">PDF profissional, pronto para enviar por WhatsApp ou imprimir. Mais o seu perfil comportamental completo.</div>
+        <div class="step-ttl">Baixa e a DNA Work age</div>
+        <div class="step-dsc">PDF pronto em 1 clique. E nossa equipe já começa a buscar as vagas certas pro seu perfil e região.</div>
         <span class="step-chip">⏱ 1 clique</span>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ O QUE VOCÊ RECEBE ═══════════════════════════════════ -->
+<!-- FEATURES -->
 <section class="sec">
   <div class="wrap">
     <div class="sec-hd rv">
@@ -607,8 +719,8 @@ footer{
     </div>
     <div class="fg">
       <div class="fc-card rv" data-d="1">
-        <div class="fc-ico" style="background:rgba(124,0,217,.12)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b96aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <div class="fc-ico" style="background:var(--p-s)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         </div>
         <div>
           <div class="fc-ttl">Currículo profissional</div>
@@ -616,8 +728,8 @@ footer{
         </div>
       </div>
       <div class="fc-card rv" data-d="2">
-        <div class="fc-ico" style="background:rgba(6,182,212,.12)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <div class="fc-ico" style="background:var(--t-s)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--t)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
         <div>
           <div class="fc-ttl">Perfil comportamental DISC</div>
@@ -625,17 +737,17 @@ footer{
         </div>
       </div>
       <div class="fc-card rv" data-d="1">
-        <div class="fc-ico" style="background:rgba(34,197,94,.12)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div class="fc-ico" style="background:var(--g-s)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <div>
-          <div class="fc-ttl">Vagas compatíveis</div>
-          <div class="fc-dsc">Com base no seu perfil, você já entra no radar das vagas certas da DNA Work. Sem precisar procurar.</div>
+          <div class="fc-ttl">Busca de vagas pelo nosso time</div>
+          <div class="fc-dsc">A equipe DNA Work usa seu perfil e localização pra encontrar as vagas certas. Você não precisa procurar.</div>
         </div>
       </div>
       <div class="fc-card rv" data-d="2">
-        <div class="fc-ico" style="background:rgba(245,158,11,.12)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <div class="fc-ico" style="background:rgba(217,119,6,.1)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </div>
         <div>
           <div class="fc-ttl">Download em PDF</div>
@@ -646,8 +758,8 @@ footer{
   </div>
 </section>
 
-<!-- ══ DEPOIMENTOS ════════════════════════════════════════ -->
-<div class="how-bg sec">
+<!-- DEPOIMENTOS -->
+<section class="sec sec-alt" style="border-top:1px solid var(--bdr)">
   <div class="wrap">
     <div class="sec-hd centered rv">
       <span class="badge badge-g">Depoimentos</span>
@@ -658,7 +770,7 @@ footer{
         <div class="tc-stars">★★★★★</div>
         <p class="tc-q">Achei que sem experiência formal eu não ia conseguir. O sistema me ajudou a valorizar o que eu já tinha feito. Na semana seguinte já tava em entrevista.</p>
         <div class="tc-auth">
-          <div class="tc-av" style="background:linear-gradient(135deg,var(--p),var(--p2))">B</div>
+          <div class="tc-av" style="background:var(--grd)">B</div>
           <div>
             <div class="tc-nm">Bruna R.</div>
             <div class="tc-loc">19 anos · Itaquera, SP</div>
@@ -680,7 +792,7 @@ footer{
         <div class="tc-stars">★★★★★</div>
         <p class="tc-q">Nunca tinha feito CV na vida. Fiz ali, baixei o PDF e já tô no processo seletivo de uma empresa de logística. Simples demais.</p>
         <div class="tc-auth">
-          <div class="tc-av" style="background:linear-gradient(135deg,#22c55e,#15803d)">M</div>
+          <div class="tc-av" style="background:linear-gradient(135deg,#16a34a,#15803d)">M</div>
           <div>
             <div class="tc-nm">Matheus C.</div>
             <div class="tc-loc">22 anos · Santo André, SP</div>
@@ -689,145 +801,118 @@ footer{
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ FAQ ════════════════════════════════════════════════ -->
+<!-- FAQ -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-hd centered rv" style="margin-bottom:40px">
+    <div class="sec-hd centered rv" style="margin-bottom:36px">
       <span class="badge badge-p">Dúvidas</span>
       <h2 class="sec-title">Perguntas<br><span class="gtxt">frequentes</span></h2>
     </div>
-    <div class="faq">
+    <div class="faq-wrap">
       <div class="fi rv">
-        <div class="fq">
-          Precisa pagar alguma coisa?
-          <div class="fi-ico">+</div>
-        </div>
-        <div class="fa">Não. O gerador de CV é 100% gratuito. Sem plano, sem assinatura, sem pegadinha de cobrança depois.</div>
+        <div class="fq">Precisa pagar alguma coisa?<div class="fi-ico">+</div></div>
+        <div class="fa">Não. O gerador de CV é 100% gratuito. Sem plano, sem assinatura, sem cobrança depois.</div>
       </div>
       <div class="fi rv">
-        <div class="fq">
-          Precisa criar conta ou cadastro?
-          <div class="fi-ico">+</div>
-        </div>
-        <div class="fa">Não. Você preenche, gera e baixa o PDF sem criar nenhuma conta. Nenhum dado pedido antes de você querer continuar.</div>
+        <div class="fq">Precisa criar conta ou cadastro?<div class="fi-ico">+</div></div>
+        <div class="fa">Não. Você preenche, gera e baixa o PDF sem criar nenhuma conta.</div>
       </div>
       <div class="fi rv">
-        <div class="fq">
-          E se eu nunca tiver trabalhado?
-          <div class="fi-ico">+</div>
-        </div>
-        <div class="fa">Perfeito — o sistema foi feito exatamente pra isso. Você pode incluir trabalhos informais, bicos, serviços pra família, voluntário e cursos. Tudo isso conta e a gente te ajuda a mostrar.</div>
+        <div class="fq">E se eu nunca tiver trabalhado?<div class="fi-ico">+</div></div>
+        <div class="fa">Perfeito — o sistema foi feito exatamente pra isso. Bicos, serviços pra família, voluntário e cursos — tudo conta.</div>
       </div>
       <div class="fi rv">
-        <div class="fq">
-          Quanto tempo leva?
-          <div class="fi-ico">+</div>
-        </div>
-        <div class="fa">Em média 4 a 6 minutos. Você responde perguntas simples e o sistema monta o CV por você — sem ficar digitando parágrafos em branco.</div>
+        <div class="fq">Como a DNA Work busca vagas pra mim?<div class="fi-ico">+</div></div>
+        <div class="fa">Assim que você gera o currículo, nossa equipe analisa seu perfil DISC, seu histórico e sua região. Com isso, a gente conecta você com as vagas abertas que mais combinam — sem você precisar fazer nada.</div>
       </div>
       <div class="fi rv">
-        <div class="fq">
-          O PDF abre no celular?
-          <div class="fi-ico">+</div>
-        </div>
-        <div class="fa">Sim. O download funciona direto no celular. Você pode enviar pelo WhatsApp, salvar na galeria ou mandar por e-mail — sem precisar de computador em nenhum momento.</div>
+        <div class="fq">O PDF abre no celular?<div class="fi-ico">+</div></div>
+        <div class="fa">Sim. O download funciona direto no celular. Você pode enviar pelo WhatsApp, salvar na galeria ou mandar por e-mail.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FINAL CTA ══════════════════════════════════════════ -->
+<!-- FINAL CTA -->
 <section class="cta-sec">
   <div class="wrap" style="position:relative;z-index:2">
     <h2 class="cta-h rv">
       Seu próximo emprego<br>
       <span class="gtxt">começa agora.</span>
     </h2>
-    <p class="cta-sub rv" data-d="1">Mais de 2.400 currículos criados. O seu é o próximo.</p>
+    <p class="cta-sub rv" data-d="1">Crie o CV. A DNA Work faz o resto — busca as vagas certas pro seu perfil e região na hora.</p>
     <div class="cta-center rv" data-d="2">
       <a href="#" class="cta cta-link" style="max-width:400px" onclick="track('Lead','final')">
         Criar meu currículo grátis
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-    <p class="micro rv" data-d="3" style="text-align:center;margin-top:14px">Gratuito · Sem cadastro · 5 minutos</p>
+    <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px" class="rv" data-d="3">Gratuito · Sem cadastro · 5 minutos</p>
     <div class="trust rv" data-d="3">
       <div class="trust-i">
-        <div class="trust-ck">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
+        <div class="trust-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
         Funciona no celular
       </div>
       <div class="trust-i">
-        <div class="trust-ck">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
+        <div class="trust-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
         PDF instantâneo
       </div>
       <div class="trust-i">
-        <div class="trust-ck">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        Perfil DISC grátis
+        <div class="trust-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        DNA Work busca as vagas
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ═════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="foot-logo">DNA <em>Work</em></div>
-    <div class="foot-fine" style="margin-top:6px">© 2026 DNA Work · Todos os direitos reservados</div>
+    <div class="foot-fine">© 2026 DNA Work · Todos os direitos reservados</div>
   </div>
 </footer>
 
-<!-- ══ SCRIPTS ════════════════════════════════════════════ -->
 <script>
-/* ── URLs ── */
-document.querySelectorAll('.cta-link').forEach(el => { el.href = GERADOR });
+/* URLs */
+document.querySelectorAll('.cta-link').forEach(el => { el.href = GERADOR; });
 
-/* ── Pixel ── */
+/* Pixel */
 function track(ev, src) {
   try { if (typeof fbq !== 'undefined') fbq('track', ev, { source: src }); } catch(e) {}
 }
 
-/* ── Scroll Reveal ── */
+/* Scroll Reveal */
 const ro = new IntersectionObserver(
-  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }),
+  es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }),
   { threshold: 0.1 }
 );
 document.querySelectorAll('.rv').forEach(el => ro.observe(el));
 
-/* ── Counter Animation ── */
+/* Counter */
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
   const isDecimal = el.hasAttribute('data-decimal');
   const suffix = el.dataset.suffix || '';
-  const dur = 1800;
+  const dur = 1600;
   const start = performance.now();
-  const update = (now) => {
+  (function tick(now) {
     const p = Math.min((now - start) / dur, 1);
     const ease = 1 - Math.pow(1 - p, 3);
     const val = Math.round(target * ease);
-    el.textContent = isDecimal ? (val / 10).toFixed(1) + suffix : val.toLocaleString('pt-BR') + suffix;
-    if (p < 1) requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
+    el.textContent = isDecimal ? (val / 10).toFixed(1) : val.toLocaleString('pt-BR') + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  })(start);
 }
 const co = new IntersectionObserver(
-  entries => entries.forEach(e => {
-    if (e.isIntersecting && e.target.dataset.target) {
-      animateCounter(e.target); co.unobserve(e.target);
-    }
-  }),
-  { threshold: 0.3 }
+  es => es.forEach(e => { if (e.isIntersecting && e.target.dataset.target) { animateCounter(e.target); co.unobserve(e.target); } }),
+  { threshold: 0.4 }
 );
 document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
 
-/* ── FAQ ── */
+/* FAQ */
 document.querySelectorAll('.fi').forEach(item => {
   item.querySelector('.fq').addEventListener('click', () => {
     const open = item.classList.contains('open');
@@ -836,13 +921,13 @@ document.querySelectorAll('.fi').forEach(item => {
   });
 });
 
-/* ── Scroll Pixel ── */
-let s25 = false, s50 = false, s75 = false;
+/* Scroll Pixel */
+let s25=false,s50=false,s75=false;
 window.addEventListener('scroll', () => {
   const p = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-  if (!s25 && p >= 25) { s25 = true; track('ViewContent','scroll_25'); }
-  if (!s50 && p >= 50) { s50 = true; track('ViewContent','scroll_50'); }
-  if (!s75 && p >= 75) { s75 = true; track('ViewContent','scroll_75'); }
+  if (!s25 && p>=25){s25=true;track('ViewContent','scroll_25');}
+  if (!s50 && p>=50){s50=true;track('ViewContent','scroll_50');}
+  if (!s75 && p>=75){s75=true;track('ViewContent','scroll_75');}
 }, { passive: true });
 </script>
 </body>
