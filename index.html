@@ -94,7 +94,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   background:linear-gradient(to top,#fff 65%,rgba(255,255,255,0));
   overflow:hidden;
 }
-@media(max-width:767px){#mob-cta{display:block}}
+/* #mob-cta visibility controlled by IntersectionObserver in JS */
 
 /* ─── NAV ────────────────────────────────────────────── */
 nav{
@@ -936,6 +936,21 @@ window.addEventListener('scroll', () => {
   if (!s50 && p>=50){s50=true;track('ViewContent','scroll_50');}
   if (!s75 && p>=75){s75=true;track('ViewContent','scroll_75');}
 }, { passive: true });
+
+/* Floating CTA — só aparece quando o botão hero sai da tela (mobile) */
+(function() {
+  const heroCta = document.querySelector('.hero .cta');
+  const mobCta = document.getElementById('mob-cta');
+  if (!heroCta || !mobCta) return;
+  const obs = new IntersectionObserver(function(entries) {
+    if (window.innerWidth >= 768) { mobCta.style.display = 'none'; return; }
+    mobCta.style.display = entries[0].isIntersecting ? 'none' : 'block';
+  }, { threshold: 0.5 });
+  obs.observe(heroCta);
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) mobCta.style.display = 'none';
+  });
+})();
 </script>
 </body>
 </html>
